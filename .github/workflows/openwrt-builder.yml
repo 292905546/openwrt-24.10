@@ -11,16 +11,10 @@
 #
 
 name: OpenWrt Builder
-on:
-  watch:
-    types: started
-jobs:
-  Ubuntu:
-    runs-on: ubuntu-latest
-    steps:
-    - name: SSH connection to Actions
-      uses: P3TERX/debugger-action@master
 
+on:
+  repository_dispatch:
+  workflow_dispatch:
 
 env:
   REPO_URL: https://github.com/openwrt/openwrt
